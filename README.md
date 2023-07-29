@@ -40,49 +40,6 @@ To install the package, you can use Go's standard `go get` command:
 go get -u github.com/gravestench/tsv
 ```
 
-### Parsing TSV Files
-To parse a Diablo 2 TSV file from a byte slice, use the `FromBytes` function to 
-create a `TsvParser`:
-
-```golang
-fileData := // Load your TSV file data here as a byte slice
-parser, err := FromBytes(fileData)
-if err != nil {
-    // Handle error
-}
-// Use the parser object to access and process the TSV data
-```
-
-### Accessing Data
-After parsing the TSV file, you can access and retrieve data using the 
-`TsvParser` methods:
-
-```golang
-// Read the next row in the TSV file, skipping "Expansion" lines
-for parser.Next() {
-    // Access string data in a given column
-    strValue := parser.String("ColumnName")
-
-    // Access numerical data in a given column
-    intValue := parser.Number("ColumnWithNumber")
-
-    // Access a boolean value in a given column
-    boolValue := parser.Bool("BooleanColumn")
-
-    // Access a list of values from a comma-delimited column
-    listValue := parser.List("CommaSeparatedColumn")
-
-    // Process the data as needed
-    // ...
-}
-```
-
-### Features
-The Diablo 2 TSV Parser package offers the following features:
-- Efficiently parse Diablo 2 tab-separated value (TSV) files.
-- Access data from the TSV file using column names.
-- Handle "Expansion" lines automatically to skip them during parsing.
-
 <!-- CONTRIBUTING -->
 ## Contributing
 

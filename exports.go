@@ -4,8 +4,6 @@ import (
 	"github.com/gravestench/tsv/pkg"
 )
 
-type TsvParser = pkg.TsvParser
-
-func FromBytes(data []byte) (*TsvParser, error) {
-	return pkg.FromBytes(data)
+func Unmarshal(tsvData []byte, destination *any) error {
+	return pkg.Unmarshal(tsvData, destination)
 }
